@@ -2,9 +2,7 @@ var express = require("express");
 var body_parser = require("body-parser");
 var cookie_parser = require("cookie-parser");
 var multer = require("multer");
-var mysql = require("mysql")
-
-
+var mysql = require("mysql");
 var app = express();
 app.use(express.json());
 app.use(express.static("public"));
@@ -29,7 +27,8 @@ app.get("/",function(req,res){
 
 
 
-  app.use("/businesscoupons",require("./routes/businesscoupons"))
+  app.use("/businesscoupons",require("./routes/businesscoupons"));
+  app.use("/businesscoponproduct/",require("./routes/business_couponproduct"));
 
     app.listen(8081, function() {
         console.log("website is  started");
